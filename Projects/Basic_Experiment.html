@@ -2,22 +2,46 @@
 <html>
     <head>
         <title>My experiment</title>
+        /*this is the title of the whole website; you can see that in the tab-part of the browser*/
+
+        /*in the script section I can load all scripts (predefined operation-manuals, using external
+         scripts like css and so on, which I don´t know how to code myself)*/
+
         <script src="jspsych-6.1.0/jspsych.js"></script>
+        /*the basic script I am using is jsPsych*/
+
         <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
-        <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script> </script> 
+        <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
+        /*furthermore, I want to use special operations predefined in the package, so called Plugins*/
+        /*Plugins are designed to display things on my website, either in text 'html-keyboard-response',
+         or as pictures 'image-keyboard-response', 
+        as sounds... and so on */
+
+        
         <link href="jspsych-6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+        /* this means: you externally link a hyper reference (href; it´s the source of the file used by the tag) which specifies the relation 
+        (rel) between the tag and href; type specifies the language or type in which the hypertext is written (here text/css)*/
+
     </head>
+    /*the headline is mandatory for every website, it defines what kinda code you are writing,
+    what libraries (jsPsych) you are using and which further external specified tools you are using (plugins and stylesheets) */
+
+
     <body></body>
+    /*for me the body is predefined by the jsPsych thingy, meaning I don´t code here, I only use the script part*/
+
     <script>
+    // the script part specifies what´s going to happen on the surface of the webpage
 
         var timeline = []
     
         var welcome = {
             type: "html-keyboard-response",
-            stimulus: "Welcome to the experiment. Press any key to begin with."
+            stimulus: "Welcome to the experiment. Press  any key (not the mouse-click) to begin with."
         };
         timeline.push(welcome);
 
+        
         var instructions = {
             type: "html-keyboard-response",
             stimulus: "<p>In this experiment, a circle will appear in the center " +
@@ -32,7 +56,6 @@
                 "<p class='small'><strong>Press the J key</strong></p></div>" +
                 "</div>"+
                 "<p>Press any key to begin.</p>",
-            post_trial_gap: 2000
         };
         timeline.push(instructions);
 
